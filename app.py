@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
+st.title("Software de Backtesting")
+
 
 @st.cache
 def load_base():
