@@ -46,6 +46,9 @@ df_filtrado = df[(df['FT_Odd_H'] >= min_H) & (df['FT_Odd_H'] <= max_H) &
 
 # Crie uma nova coluna no dataframe filtrado com o profit acumulado
 df_filtrado['Profit_acu'] = df_filtrado.Profit.cumsum()
+df_filtrado = df_filtrado.dropna()
+df_filtrado = df_filtrado.reset_index(drop=True)
+df_filtrado.index += 1
 profit = round(df_filtrado.Profit_acu.tail(1).item(),2)
 ROI = round((df_filtrado.Profit_acu.tail(1)/len(df_filtrado)*100).item(),2)
 df_filtrado.Profit_acu.plot(title="Back Home", xlabel='Entradas', ylabel='Stakes')
