@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 st.title("Software de Backtesting")
 
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_base():
     url = "https://github.com/futpythontrader/YouTube/blob/main/Base_de_Dados/futpythontraderpunter.csv?raw=true"
     data_jogos = pd.read_csv(url)
@@ -55,3 +55,4 @@ print("ROI:",ROI,"%")
 # Plote o gráfico com o profit acumulado do dataframe filtrado
 plt.plot(df_filtrado['Profit_acu'])
 st.pyplot()
+st.set_option('deprecation.showPyplotGlobalUse', False)
