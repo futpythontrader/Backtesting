@@ -14,7 +14,7 @@ def load_base():
 
 df = load_base()
 
-df.loc[(df['FT_Goals_H'] >  df['FT_Goals_A']), 'Profit'] = df['FT_Odds_H'] - 1
+df.loc[(df['FT_Goals_H'] >  df['FT_Goals_A']), 'Profit'] = df['FT_Odd_H'] - 1
 df.loc[(df['FT_Goals_H'] <= df['FT_Goals_A']), 'Profit'] = -1
 
 # Caixa de texto para filtrar Odd Home
